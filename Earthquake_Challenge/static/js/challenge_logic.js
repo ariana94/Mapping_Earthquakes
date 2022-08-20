@@ -210,11 +210,11 @@ function getRadius(magnitude) {
       return L.circleMarker(latlng);
     },
     // Style each circle with styleInfo() function
-    style: styleInfo,
-    // Create a popup for the circle to display the magnitude and location of the earthquake
-    onEachFeature: function(feature, layer) {
-      layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
-    }
+    style: styleInfo
+    // // Create a popup for the circle to display the magnitude and location of the earthquake
+    // onEachFeature: function(feature, layer) {
+    //   layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
+    // }
     //Add the major earthquake layer group variable you created in Step 1 to the map, i.e., .addTo(majorEQ) and then close the geoJSON() layer. 
   }).addTo(majorEarthquakes);
   // 8. Add the major earthquakes layer to the map.
@@ -227,14 +227,16 @@ function getRadius(magnitude) {
 legend.onAdd = function() {
   let div = L.DomUtil.create("div", "info legend");
 
-  const magnitudes = [0, 1, 2, 3, 4, 5];
+  const magnitudes = [0, 1, 2, 3, 4, 5, 6, 7];
   const colors = [
     "#98ee00",
     "#d4ee00",
     "#eecc00",
     "#ee9c00",
     "#ea822c",
-    "#ea2c2c"
+    "#ea2c2c",
+    "#4B8EC1",
+    "#3E1255"
   ];
 
 // Looping through our intervals to generate a label with a colored square for each interval.
